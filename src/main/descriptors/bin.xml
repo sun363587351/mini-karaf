@@ -1,0 +1,100 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <!-- Expanded Karaf Standard Distribution -->
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-${karaf.version}</directory>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>bin/**</exclude>
+                <exclude>etc/system.properties</exclude>
+                <exclude>etc/users.properties</exclude>
+                <exclude>etc/org.apache.karaf.features.cfg</exclude>
+                <exclude>etc/org.ops4j.pax.logging.cfg</exclude>
+                <exclude>etc/custom.properties</exclude>
+                <exclude>LICENSE</exclude>
+                <exclude>NOTICE</exclude>
+                <exclude>README.md</exclude>
+                <exclude>RELEASE-NOTES.md</exclude>
+                <exclude>karaf-manual*.html</exclude>
+                <exclude>karaf-manual*.pdf</exclude>
+                <exclude>examples/**</exclude>
+            </excludes>
+        </fileSet>
+
+        <!-- Copy over bin/* separately to get the correct file mode -->
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-${karaf.version}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>bin/karaf</include>
+                <include>bin/karaf.bat</include>
+                <include>bin/start</include>
+                <include>bin/start.bat</include>
+                <include>bin/stop</include>
+                <include>bin/stop.bat</include>
+                <include>bin/shell</include>
+                <include>bin/shell.bat</include>
+                <include>bin/setenv</include>
+                <include>bin/setenv.bat</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- Copy over jar files -->
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <includes>
+                <include>mybranding.jar</include>
+            </includes>
+            <outputDirectory>/lib/console</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/main/distribution/etc</directory>
+            <includes>
+                <include>system.properties</include>
+                <include>users.properties</include>
+                <include>org.apache.karaf.features.cfg</include>
+                <include>org.ops4j.pax.logging.cfg</include>
+                <include>custom.properties</include>
+            </includes>
+            <outputDirectory>/etc</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0644</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/features-repo</directory>
+            <outputDirectory>/system</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+
+    <files>
+        <file>
+            <source>${basedir}/target/dependencies/apache-karaf-${karaf.version}/bin/karaf</source>
+            <outputDirectory>/bin/</outputDirectory>
+            <destName>mycustom</destName>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/my-features/target/features/features.xml</source>
+            <outputDirectory>/system/my.company/my-features/${project.version}</outputDirectory>
+            <destName>my-features-${project.version}-features.xml</destName>
+            <!--
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+            -->
+        </file>
+    </files>
+</assembly>

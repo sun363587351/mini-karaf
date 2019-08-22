@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1566455442387
+Build-Jdk: 1.8.0_202
+Built-By: sunc
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Karaf :: Sunc :: Branding
+Bundle-SymbolicName: my.company.my-brand
+Bundle-Version: 4.2.6
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.apache.karaf.branding;version="4.2.6"
+Spring-Context: *;public-context:=false
+Tool: Bnd-4.2.0.201903051501
