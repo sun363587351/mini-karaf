@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
         
     <groupId>my.company</groupId>
-    <artifactId>my.features</artifactId>
+    <artifactId>my-karaf-features</artifactId>
     <version>4.2.6</version>
     <name>Apache Karaf :: Sunc :: Features :: By sunc</name>
     <packaging>pom</packaging>

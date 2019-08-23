@@ -16,13 +16,13 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<features name="sunc-features" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0">
+<features name="my-features-0.0.1" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0">
 
-    <feature name="my.features" description="my features" version="4.2.6">
+    <feature name="my-first-features" description="Features by sunc" version="4.2.6">
         
-        <configfile finalname="${karaf.etc}/my-features.jdbc.cfg">mvn:my.company/my-features/4.2.6/cfg/jdbc</configfile>
+        <configfile finalname="${karaf.etc}/my-features.jdbc.cfg">mvn:my.company/my-karaf-features/4.2.6/cfg/jdbc</configfile>
         
-        <configfile finalname="${karaf.deploy}/my-features.http.cfg" override="true">mvn:my.company/my-features/4.2.6/cfg/http</configfile>
+        <configfile finalname="${karaf.etc}/my-features.http.cfg" override="true">mvn:my.company/my-karaf-features/4.2.6/cfg/http</configfile>
         <bundle>mvn:commons-io/commons-io/2.6</bundle>
         <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
         <bundle>mvn:commons-discovery/commons-discovery/0.5</bundle>

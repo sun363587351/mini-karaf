@@ -89,8 +89,8 @@
         </file>
         <file>
             <source>${basedir}/my-features/target/features/features.xml</source>
-            <outputDirectory>/system/my.company/my-features/${project.version}</outputDirectory>
-            <destName>my-features-${project.version}-features.xml</destName>
+            <outputDirectory>/system/my.company/my-karaf-features/${project.version}</outputDirectory>
+            <destName>my-karaf-features-${project.version}-features.xml</destName>
             <!--
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>

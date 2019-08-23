@@ -23,6 +23,10 @@
       </repository>
   </repositories>    
   -->
+  <modules>
+      <module>my-brand</module>
+      <module>my-features</module>
+  </modules>
 
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
